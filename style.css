@@ -1,0 +1,326 @@
+/* Global Styles & Body Background */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif; /* Default body font */
+    background: url('img/sec.avif') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    color: #333; /* Default text color */
+    position: relative; /* For overlay */
+}
+
+/* Add a subtle overlay to the background image for better contrast */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Darker overlay */
+    z-index: -1; /* Behind the content */
+}
+
+/* Contact Card Container */
+.contact-card {
+    background: rgba(255, 255, 255, 0.95); /* Slightly more opaque for crispness */
+    border-radius: 25px; /* Even more rounded corners for a softer, modern look */
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25); /* Stronger, more diffused shadow */
+    max-width: 950px; /* Slightly wider for a more expansive feel */
+    width: 100%;
+    overflow: hidden; /* Ensures rounded corners clip content */
+    backdrop-filter: blur(10px); /* Stronger blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly more prominent white border */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Slower, smoother transition */
+}
+
+.contact-card:hover {
+    transform: translateY(-8px) scale(1.005); /* More pronounced lift and slight scale effect on hover */
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35); /* Even stronger shadow on hover */
+}
+
+/* Header Section */
+.header-section {
+    background: linear-gradient(135deg, #0d306b, #1f80e0); /* Deeper, more vibrant gradient */
+    padding: 50px; /* More padding for a premium feel */
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 6px solid rgba(255, 255, 255, 0.3); /* Thicker separator line */
+}
+
+/* Animated Logo */
+.animated-logo {
+    font-family: 'Poppins', sans-serif; /* Poppins for logo */
+    font-size: 42px; /* Larger font size for impact */
+    font-weight: 800; /* Bolder weight */
+    margin-bottom: 35px;
+    letter-spacing: 1.5px; /* Increased letter spacing */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Stronger text shadow */
+    animation: fadeInScale 1.2s ease-out forwards; /* Slightly slower animation */
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Profile Area (Avatar + Info) */
+.profile-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Increased gap */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.avatar-container {
+    width: 150px; /* Slightly larger avatar */
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #1f80e0, #0d306b); /* Gradient border background */
+    padding: 6px; /* Creates a thicker border effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for avatar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff; /* Thicker white inner border */
+    transition: transform 0.3s ease-in-out; /* Smooth scale on hover */
+}
+
+.avatar:hover {
+    transform: scale(1.08); /* Avatar slightly scales on hover */
+}
+
+.info-text h1 {
+    font-family: 'Poppins', sans-serif; /* Poppins for name */
+    font-size: 36px; /* Larger name font */
+    margin: 0;
+    font-weight: 800; /* Bolder weight */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.info-text h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px; /* Larger title font */
+    margin: 10px 0 8px;
+    font-weight: 700; /* Bolder weight */
+    opacity: 0.95;
+}
+
+.info-text p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* Details Section */
+.details-section {
+    padding: 50px; /* More padding */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap between details */
+    border-bottom: 1px solid #e5e5e5; /* Slightly darker separator */
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start; /* Align icon and text at the top */
+    gap: 20px; /* Increased gap */
+    font-size: 18px; /* Larger font size */
+    color: #444;
+}
+
+.detail-item .icon {
+    color: #1f80e0; /* Icon color matching gradient */
+    font-size: 24px; /* Larger icon size */
+    min-width: 30px; /* Ensure icons align */
+    text-align: center;
+    padding-top: 2px; /* Adjust vertical alignment for icons */
+}
+
+.detail-item a {
+    color: #1f80e0;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease, text-shadow 0.3s ease; /* Added text-shadow transition */
+}
+
+.detail-item a:hover {
+    color: #0d306b; /* Darker blue on hover */
+    text-decoration: underline;
+    text-shadow: 0 0 5px rgba(31, 128, 224, 0.5); /* Subtle glow on hover */
+}
+
+/* Action Section for Buttons */
+.action-section {
+    padding: 30px 50px; /* Padding consistent with footer */
+    text-align: center; /* Center the button */
+    border-bottom: 1px solid #e5e5e5; /* Separator from footer */
+}
+
+.add-contact-button {
+    background: linear-gradient(90deg, #1f80e0, #0d306b); /* Gradient background for button */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px; /* Rounded corners for button */
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-flex; /* Allows icon and text to sit nicely */
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.add-contact-button:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #0d306b, #1f80e0); /* Reverse gradient on hover */
+}
+
+.add-contact-button:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Footer Section */
+.footer-section {
+    padding: 30px 50px; /* More padding */
+    text-align: right; /* Align logo to the right */
+}
+
+.company-logo {
+    max-width: 200px; /* Larger company logo */
+    opacity: 0.98;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15)); /* Stronger shadow for logo */
+    transition: transform 0.3s ease-in-out; /* Scale on hover */
+}
+
+.company-logo:hover {
+    transform: scale(1.05); /* Company logo scales on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 0; /* Remove padding from container, sections handle it */
+        border-radius: 20px; /* Adjusted border-radius for mobile */
+    }
+
+    .header-section {
+        padding: 40px 25px; /* Adjusted padding */
+    }
+
+    .animated-logo {
+        font-size: 34px; /* Adjusted font size */
+        margin-bottom: 30px;
+    }
+
+    .profile-area {
+        flex-direction: column; /* Stack avatar and info vertically */
+        text-align: center;
+        gap: 25px;
+    }
+
+    .avatar-container {
+        width: 130px; /* Adjusted avatar size */
+        height: 130px;
+        padding: 5px;
+    }
+
+    .info-text h1 {
+        font-size: 30px; /* Adjusted font size */
+    }
+
+    .info-text h2 {
+        font-size: 20px; /* Adjusted font size */
+    }
+
+    .info-text p {
+        font-size: 15px;
+    }
+
+    .details-section {
+        padding: 40px 25px; /* Adjusted padding */
+        gap: 20px;
+    }
+
+    .detail-item {
+        font-size: 17px; /* Adjusted font size */
+    }
+
+    .detail-item .icon {
+        font-size: 22px; /* Adjusted icon size */
+        min-width: 28px;
+    }
+
+    .action-section {
+        padding: 25px 25px; /* Adjusted padding */
+    }
+
+    .add-contact-button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    .footer-section {
+        padding: 25px 25px; /* Adjusted padding */
+        text-align: center; /* Center logo on small screens */
+    }
+
+    .company-logo {
+        max-width: 160px; /* Adjusted logo size */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-section {
+        padding: 30px 15px;
+    }
+    .animated-logo {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    .details-section {
+        padding: 30px 15px;
+        gap: 18px;
+    }
+    .detail-item {
+        font-size: 16px;
+    }
+    .detail-item .icon {
+        font-size: 20px;
+    }
+    .action-section {
+        padding: 20px 15px;
+    }
+    .add-contact-button {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+    .footer-section {
+        padding: 20px 15px;
+    }
+    .company-logo {
+        max-width: 130px;
+    }
+}
