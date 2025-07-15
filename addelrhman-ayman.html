@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,3 +95,101 @@ END:VCARD`;
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network Digital Solutions - Eng. Abdulrhman Ayman Essa</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts: Poppins (for headings) and Open Sans (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <!-- Link to your custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="contact-card">
+        <div class="header-section">
+            <div class="animated-logo">Network Digital Solutions</div>
+            <div class="profile-area">
+                <div class="avatar-container">
+                    <img src="img/Cybersecurity-500x333-1.webp" alt="Eng. Abdulrhman Ayman Essa Avatar" class="avatar">
+                </div>
+                <div class="info-text">
+                    <h1>Eng. Abdulrhman Ayman Essa</h1>
+                    <h2>System Engineer</h2>
+                    <p>Network Digital Solutions</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <div class="detail-item">
+                <i class="fas fa-map-marker-alt icon"></i>
+                <span>6th of October - Plot No. 3 - Tourist Residential Separation Third Floor - Central Spin</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-phone icon"></i>
+                <span>+201118303264</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-envelope icon"></i>
+                <a href="mailto:abdelrahman.ayman@networkds25.com">abdelrahman.ayman@networkds25.com</a>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-globe icon"></i>
+                <a href="https://www.networkds25.com" target="_blank">www.networkds25.com</a>
+            </div>
+            <div class="detail-item">
+                <i class="fab fa-linkedin icon"></i>
+                <a href="https://www.linkedin.com/in/abdo-ae25800/" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+
+        <!-- Action Section for the Add to Contacts Button -->
+        <div class="action-section">
+            <button id="add-to-contacts-btn" class="add-contact-button">
+                <i class="fas fa-user-plus"></i> Add to Contacts (vCard)
+            </button>
+        </div>
+
+        <div class="footer-section">
+            <img src="img/Untitled design (1).png" alt="Company Logo" class="company-logo">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('add-to-contacts-btn').addEventListener('click', function() {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Essa;Abdulrhman Ayman;;Eng.;
+FN:Eng. Abdulrhman Ayman Essa
+ORG:Network Digital Solutions
+TITLE:System Engineer
+TEL;TYPE=WORK,VOICE:+201118303264
+EMAIL;TYPE=PREF,INTERNET:abdelrahman.ayman@networkds25.com
+URL:https://www.networkds25.com
+ADR;TYPE=WORK,PREF:;;6th of October - Plot No. 3 - Tourist Residential Separation Third Floor - Central Spin;;;;
+URL:https://www.linkedin.com/in/abdo-ae25800/
+
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Eng_Abdulrhman_Ayman_Essa_Contact.vcf'; // File name for the vCard
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url); // Clean up the URL object
+        });
+    </script>
+
+</body>
+</html>
+>>>>>>> 1328425 (Initial commit - upload contact profiles)
