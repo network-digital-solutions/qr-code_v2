@@ -67,12 +67,12 @@
         document.getElementById('add-to-contacts-btn').addEventListener('click', function() {
             const vCardData = `BEGIN:VCARD
 VERSION:3.0
-N:Abdelaziz;Mostafa Ayman;;Eng.;
-FN:Eng. Mostafa Ayman Abdelaziz
+N:;Nader Talaat;;Eng.;
+FN:Eng. Nader Talaat
 ORG:Network Digital Solutions
-TITLE:Network & Security Engineer
-TEL;TYPE=WORK,VOICE:+201558265503
-EMAIL;TYPE=PREF,INTERNET:mostafa.ayman@networkds25.com
+TITLE:Project Management Office Director
+TEL;TYPE=WORK,VOICE:+201111120253
+EMAIL;TYPE=PREF,INTERNET:nader.talaat@networkds25.com
 URL:https://www.networkds25.com
 ADR;TYPE=WORK,PREF:;;6th of October - Plot No. 3 - Tourist Residential Separation Third Floor - Central Spin;;;;
 https://www.linkedin.com/in/nader-talaat-8ab154115/
@@ -83,7 +83,7 @@ END:VCARD`;
 
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Eng_Mostafa_Ayman_Abdelaziz_Contact.vcf'; // File name for the vCard
+            a.download = 'Eng_Nader_Talaat_Contact.vcf'; // File name for the vCard
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
