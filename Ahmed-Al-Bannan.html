@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network Digital Solutions - Dr. Ahmed Al-Bannan Mohamed Taha (TERMINATED)</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts: Poppins (for headings) and Open Sans (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <!-- Link to your custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .termination-notice {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+            border: 2px solid #bd2130;
+        }
+        .termination-notice h3 {
+            margin: 0 0 15px 0;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .termination-notice p {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .termination-notice .warning-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        .contact-card {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- إشعار الفصل -->
+    <div class="termination-notice">
+        <i class="fas fa-exclamation-triangle warning-icon"></i>
+        <h3>⚠️ إشعار هام - IMPORTANT NOTICE ⚠️</h3>
+        <p><strong>تم فصل هذا الموظف من الشركة</strong></p>
+        <p><strong>THIS EMPLOYEE HAS BEEN TERMINATED</strong></p>
+        <p>شركة Network Digital Solutions غير مسؤولة عن أي تصرفات أو التزامات لهذا الشخص</p>
+        <p>Network Digital Solutions is NOT responsible for any actions or obligations of this individual</p>
+        <p><strong>تاريخ الفصل / Termination Date: December 9, 2025</strong></p>
+    </div>
+
+    <div class="contact-card">
+        <div class="header-section">
+            <div class="animated-logo">Network Digital Solutions</div>
+            <div class="profile-area">
+                <div class="avatar-container">
+                    <img src="img/ceo.jpg" alt="Dr. Ahmed Al-Bannan Mohamed Taha Avatar" class="avatar">
+                </div>
+                <div class="info-text">
+                    <h1>Dr. Ahmed Al-Bannan Mohamed Taha</h1>
+                    <h2 style="text-decoration: line-through; color: #dc3545;">Chief Executive Officer (CEO) - TERMINATED</h2>
+                    <p style="color: #dc3545; font-weight: bold;">⚠️ موظف سابق - Former Employee</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <div class="detail-item">
+                <i class="fas fa-map-marker-alt icon"></i>
+                <span>6th of October - Plot No. 3 - Tourist Residential Separation Third Floor - Central Spin</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-phone icon"></i>
+                <span>+201069935592</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-envelope icon"></i>
+                <a href="mailto:ahmed.albannan@networkds25.com">ahmed.albannan@networkds25.com</a>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-globe icon"></i>
+                <a href="https://www.networkds25.com" target="_blank">www.networkds25.com</a>
+            </div>
+  
+        </div>
+
+        <!-- Action Section for the Add to Contacts Button - DISABLED -->
+        <div class="action-section" style="display: none;">
+            <button id="add-to-contacts-btn" class="add-contact-button" disabled>
+                <i class="fas fa-user-plus"></i> Add to Contacts (vCard)
+            </button>
+        </div>
+        
+        <div style="background-color: #fff3cd; border: 2px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center;">
+            <p style="color: #856404; font-weight: bold; margin: 0;">
+                <i class="fas fa-ban"></i> جميع معلومات الاتصال غير صالحة | All contact information is invalid
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <img src="img/Untitled design (1).png" alt="Company Logo" class="company-logo">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('add-to-contacts-btn').addEventListener('click', function() {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Taha;Ahmed Al-Bannan Mohamed;;Dr.;
+FN:Dr. Ahmed Al-Bannan Mohamed Taha
+ORG:Network Digital Solutions
+TITLE:Chief Executive Officer (CEO)
+TEL;TYPE=WORK,VOICE:+201069935592
+EMAIL;TYPE=PREF,INTERNET:ahmed.albannan@networkds25.com
+URL:https://www.networkds25.com
+ADR;TYPE=WORK,PREF:;;6th of October - Plot No. 3 - Tourist Residential Separation Third Floor - Central Spin;;;;
+
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Dr_Ahmed_Al-Bannan_Mohamed_Taha_Contact.vcf'; // File name for the vCard
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url); // Clean up the URL object
+        });
+    </script>
+
+</body>
+</html>
